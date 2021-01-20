@@ -29,6 +29,9 @@ export default {
         capitalize(value){
             return value.charAt(0).toUpperCase() + value.slice(1);
         }
+    },
+    mounted(){
+        console.log("executé au montage");
     }
 }
 </script>
