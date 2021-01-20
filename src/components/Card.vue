@@ -1,7 +1,7 @@
 <template>
     <article :class="{ 'alt-style' : alternate }">
-        <p>Prénom: {{ firstname }}</p>
-        <p>Nom: {{ lastname }}</p>
+        <p>Prénom: {{ firstname | capitalize }}</p>
+        <p>Nom: {{ lastname | capitalize }}</p>
         <p>Age: {{ age }}</p>
     </article>
 </template>
@@ -23,6 +23,11 @@ export default {
         },
         alternate: {
             type: Boolean
+        }
+    },
+    filters: {
+        capitalize(value){
+            return value.charAt(0).toUpperCase() + value.slice(1);
         }
     }
 }
